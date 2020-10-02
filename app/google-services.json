@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "508586054432",
+    "firebase_url": "https://mokaf7a.firebaseio.com",
+    "project_id": "mokaf7a",
+    "storage_bucket": "mokaf7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508586054432:android:cb1b3709ccc0edb5d2fd45",
+        "android_client_info": {
+          "package_name": "com.resala.mokaf7a"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508586054432-9d5n5se1vedtinb2hve56r7jt81ahv3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvqDYMGYLqZW_7frDTyqdgZXZobaGrVCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508586054432-9d5n5se1vedtinb2hve56r7jt81ahv3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

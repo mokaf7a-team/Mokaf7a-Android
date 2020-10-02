@@ -44,6 +44,7 @@
             android:textSize="16sp" >
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTextEmailAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -62,6 +63,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/editTextTextPassword"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,14 +72,16 @@
             android:layout_height="wrap_content"
             android:text="Forget Password?"
             android:layout_gravity="right"
-            android:layout_margin="5dp"
-            android:elevation="0dp"/>
+            android:onClick="resetPassword"
+            android:layout_margin="5dp" />
 
         <Button
+            android:id="@+id/login_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="log in"
-           android:textColor="@color/BlueColor"
+            android:onClick="loginClick"
+            android:textColor="@color/BlueColor"
             android:textStyle="bold"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"/>
