@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.resala.mokaf7a">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name="androidx.multidex.MultiDexApplication"
         android:allowBackup="true"
@@ -15,7 +18,8 @@
         android:supportsRtl="false"
         android:theme="@style/AppTheme.NoActionBar"
         tools:replace="android:supportsRtl">
-        <activity android:name=".form"></activity>
+        <activity android:name=".SginUpActivity"></activity>
+        <activity android:name=".form" />
         <activity android:name=".LoginActivity" />
         <activity
             android:name=".SplashActivity"
@@ -28,9 +32,5 @@
         </activity>
         <activity android:name=".MainActivity" />
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
 
 </manifest>

@@ -56,9 +56,9 @@ public class LoginActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_login);
     mAuth = FirebaseAuth.getInstance();
-    email_et = findViewById(R.id.editTextTextEmailAddress);
-    password_et = findViewById(R.id.editTextTextPassword);
-    login_btn = findViewById(R.id.login_btn);
+    email_et = findViewById(R.id.editText);
+    password_et = findViewById(R.id.editText2);
+    login_btn = findViewById(R.id.button);
     login_btn.setEnabled(false);
     login_btn.setBackgroundColor(
             getResources().getColor(R.color.common_google_signin_btn_text_light_disabled));

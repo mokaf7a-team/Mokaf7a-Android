@@ -1,6 +1,26 @@
 <resources>
     <string name="app_name">Mokaf7a</string>
-    <string name="login">Login</string>
-    <string name="password_hint">Password</string>
-    <string name="email_hint">Email</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="password_hint">كلمة السر</string>
+    <string name="email_hint">البريد الالكترونى</string>
+    <string name="sgin_up">إنشاء حساب جديد</string>
+    <string name="branch">الفرع</string>
+    <string name="name">الاسم</string>
+    <string name="or">أو</string>
+    <string name="sgin">تسجيل</string>
+    <string name="entre">ادخل</string>
+    <string name="report">تسجيل بلاغ</string>
+    <string name="forget_pass">نسيت كلمة السر ؟</string>
+
+    <string-array name="الفروع">
+        <item>المهندسين</item>
+        <item>فيصل</item>
+        <item>المعادى</item>
+        <item>مصر الجديده</item>
+        <item>مدينة نصر</item>
+        <item>6اكتوبر</item>
+        <item>اسكندرية</item>
+        <item>حلوان</item>
+        <item>المقطم</item>
+    </string-array>
 </resources>
