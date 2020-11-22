@@ -1,10 +1,10 @@
 package com.resala.mokaf7a;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class form extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class FormActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

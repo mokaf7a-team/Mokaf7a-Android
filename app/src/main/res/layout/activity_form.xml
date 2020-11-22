@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/form_background"
-    tools:context=".form">
+    tools:context=".FormActivity">
 
     <ImageView
         android:id="@+id/imageView"

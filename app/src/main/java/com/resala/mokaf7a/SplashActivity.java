@@ -15,13 +15,10 @@ public class SplashActivity extends AppCompatActivity {
         int SPLASH_DISPLAY_LENGTH = 1000; // Duration of wait
         new Handler()
                 .postDelayed(
-                        new Runnable() {
-                            @Override
-              public void run() {
-                                SplashActivity.this.startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                                SplashActivity.this.finish();
-                            }
-            },
-            SPLASH_DISPLAY_LENGTH);
+                        () -> {
+                            SplashActivity.this.startActivity(new Intent(getApplicationContext(), StarterActivity.class));
+                            SplashActivity.this.finish();
+                        },
+                        SPLASH_DISPLAY_LENGTH);
   }
 }
