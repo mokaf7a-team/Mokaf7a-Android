@@ -80,9 +80,8 @@ public class LoginActivity extends AppCompatActivity {
                         Log.w(TAG, "Failed to read value.", error.toException());
                     }
                 });
-        // TODO :: uncomment when log out button is avaliable
-        //    FirebaseUser currentUser = mAuth.getCurrentUser();
-        //    updateUI(currentUser);
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
     }
 
     private void makeAdminActions() {

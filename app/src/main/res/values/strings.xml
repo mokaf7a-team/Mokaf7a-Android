@@ -3,7 +3,7 @@
     <string name="login">تسجيل الدخول</string>
     <string name="password_hint">كلمة السر</string>
     <string name="email_hint">البريد الالكترونى</string>
-    <string name="sgin_up">إنشاء حساب جديد</string>
+    <string name="sign_up">إنشاء حساب جديد</string>
     <string name="branch">الفرع</string>
     <string name="name">الاسم</string>
     <string name="or">أو</string>
@@ -11,6 +11,10 @@
     <string name="entre">ادخل</string>
     <string name="report">تسجيل بلاغ</string>
     <string name="forget_pass">نسيت كلمة السر ؟</string>
+    <string name="log_out_btn_txt">خروج</string>
+    <string name="arabic_app_name">قوات مكافحة البرد</string>
+    <string name="tab_text_1">احصائيات</string>
+    <string name="tab_text_2">عرض البلاغات</string>
 
     <string-array name="الفروع">
         <item>المهندسين</item>
@@ -23,4 +27,7 @@
         <item>حلوان</item>
         <item>المقطم</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dummy_far3">المهندسين</string>
 </resources>
