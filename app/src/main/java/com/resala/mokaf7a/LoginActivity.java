@@ -37,8 +37,8 @@ public class LoginActivity extends AppCompatActivity {
             "المهندسين",
             "المعادي",
             "فيصل",
-            "مدينة نصر",
-            "مصر الجديدة",
+            "مدينة_نصر",
+            "مصر_الجديدة",
             "اكتوبر",
             "حلوان",
             "اسكندرية",
@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         DatabaseReference adminAccount = database.getReference("AdminAccount");
-        adminAccount.addValueEventListener(
+        adminAccount.addListenerForSingleValueEvent(
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

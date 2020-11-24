@@ -9,5 +9,9 @@
     <color name="BlueColor">#042241</color>
     <color name="mintGreen">#48E873</color>
     <color name="redColor">#E81A1C</color>
-
+    <color name="new_gray_light">#d7d7d7</color>
+    <color name="new_gray_dark">#cbcaca</color>
+    <color name="new_text_black">#464646</color>
+    <color name="light_gray">#F6F6F6</color>
+    <color name="darker_gray">#C6C6C6</color>
 </resources>
