@@ -10,7 +10,7 @@ public class Report {
     public Object clothes_num;
     public String date;
     public String feed_back;
-    public String feed_back_details;
+    public String feed_back_type;
     public String first_feedback; //first-feedback is the correct
     public String gender;
     public String help_date;
@@ -45,7 +45,7 @@ public class Report {
         this.clothes_num = 0;
         this.date = date;
         this.feed_back = "";
-        this.feed_back_details = "";
+        this.feed_back_type = "";
         this.gender = gender;
         this.help_date = "";
         this.id = "";
@@ -59,6 +59,11 @@ public class Report {
     }
 
     public Report() {
+        this.feed_back_type = "";
+    }
+
+    public void setId(Object id) {
+        this.id = id;
     }
 
     public void setFirst_feedback(String first_feedback) {

@@ -36,6 +36,7 @@ public class StatisticsFragment extends Fragment {
     TextView branchTV;
 
     private ProgressDialog progress;
+
     DatabaseReference reportsRef;
     ValueEventListener reportsListener;
     private long totalReports;
@@ -149,7 +150,7 @@ public class StatisticsFragment extends Fragment {
                             assert report != null;
                             for (branchIterator = 0; branchIterator < BRANCHES_COUNT; branchIterator++) {
                                 if (report.branch.trim().equals(branches[branchIterator])) {
-                                    if (report.feed_back.isEmpty())
+                                    if (report.feed_back_type == null || report.feed_back_type.isEmpty())
                                         unfinishedT3amolCounter[branchIterator]++;
                                     if (twasol == null || twasol.isEmpty())
                                         unfinishedTwasolCounter[branchIterator]++;

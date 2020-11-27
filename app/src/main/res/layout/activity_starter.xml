@@ -27,7 +27,7 @@
         android:fontFamily="@font/khayal"
         android:gravity="center"
         android:text="قوات مكافحة البرد"
-        android:textColor="#ffd700"
+        android:textColor="@color/gold"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

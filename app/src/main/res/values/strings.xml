@@ -16,19 +16,8 @@
     <string name="tab_text_1">احصائيات</string>
     <string name="tab_text_2">عرض البلاغات</string>
 
-    <string-array name="الفروع">
-        <item>المهندسين</item>
-        <item>فيصل</item>
-        <item>المعادى</item>
-        <item>مصر الجديده</item>
-        <item>مدينة نصر</item>
-        <item>6اكتوبر</item>
-        <item>اسكندرية</item>
-        <item>حلوان</item>
-        <item>المقطم</item>
-    </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="dummy_far3">المهندسين</string>
+    <string name="dummy_far3">مصر_الجديدة</string>
     <string name="dummy_number">0</string>
+    <string name="dummy_date">20–11–2020</string>
+    <string name="dummy_area">طريق مصر اسكندرية الصحراوي</string>
 </resources>

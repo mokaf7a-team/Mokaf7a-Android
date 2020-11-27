@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/form_box"
+    tools:context=".ReportDetails">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/refresh_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/blue_btn"
+            android:onClick="close"
+            android:padding="12dp"
+            android:src="@drawable/close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/add_meeting_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/blue_btn"
+            android:fontFamily="@font/new_jf"
+            android:onClick="editReport"
+            android:text="حفظ التعديلات"
+            android:textColor="@color/whiteColor"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reporterFoodNum_et" />
+
+        <EditText
+            android:id="@+id/reportDescription_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:inputType="textMultiLine"
+            android:minHeight="32dp"
+            android:paddingVertical="5dp"
+            android:scrollbars="vertical"
+            android:selectAllOnFocus="true"
+            android:textAlignment="center"
+            android:textColor="@color/BlueColor"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/reportDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reporterPlaceTV" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/BlueColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reportDescription_et" />
+
+        <TextView
+            android:id="@+id/reporterFirstFeedback"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:text="تواصل اول"
+            android:textColor="@color/BlueColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reporterSecondFeedback"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/reporterSecondFeedback"
+            app:layout_constraintTop_toTopOf="@+id/reporterSecondFeedback" />
+
+        <TextView
+            android:id="@+id/reporterSecondFeedback"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:text="تواصل ثاني"
+            android:textColor="@color/BlueColor"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/reporterFirstFeedback"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <EditText
+            android:id="@+id/reporterFirstFeedback_et"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:textColor="@color/BlueColor"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reporterSecondFeedbackTV"
+            app:layout_constraintEnd_toEndOf="@+id/reporterFirstFeedback"
+            app:layout_constraintStart_toStartOf="@+id/reporterFirstFeedback"
+            app:layout_constraintTop_toTopOf="@+id/reporterSecondFeedbackTV" />
+
+        <EditText
+            android:id="@+id/reporterSecondFeedbackTV"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:textColor="@color/BlueColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/reporterSecondFeedback"
+            app:layout_constraintStart_toStartOf="@+id/reporterSecondFeedback"
+            app:layout_constraintTop_toBottomOf="@+id/reporterSecondFeedback" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/BlueColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reporterSecondFeedbackTV" />
+
+        <EditText
+            android:id="@+id/reporterFeedbackType_et"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:textColor="@color/BlueColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/reporterFeedbackType"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+        <TextView
+            android:id="@+id/reporterFeedbackType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/new_jf"
+            android:text="نوع الفيدباك"
+            android:textColor="@color/redColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reporterFeedbackType_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reporterFeedbackType_et" />
+
+        <EditText
+            android:id="@+id/reporterFeedbackDetails_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:inputType="textMultiLine"
+            android:minHeight="32dp"
+            android:paddingVertical="5dp"
+            android:scrollbars="vertical"
+            android:selectAllOnFocus="true"
+            android:textAlignment="center"
+            android:textColor="@color/BlueColor"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/reporterFeedbackDetails"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reporterFeedbackType_et" />
+
+        <TextView
+            android:id="@+id/reporterFeedbackDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/new_jf"
+            android:text="تفاصيل الفيدباك"
+            android:textColor="@color/redColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reporterFeedbackDetails_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reporterFeedbackDetails_et" />
+
+        <TextView
+            android:id="@+id/reportDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:text="تفاصيل\n البلاغ"
+            android:textAlignment="center"
+            android:textColor="@color/BlueColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reportDescription_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reportDescription_et" />
+
+        <TextView
+            android:id="@+id/reporterDateTV"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:textColor="@color/BlueColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/reporterDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/refresh_btn" />
+
+        <TextView
+            android:id="@+id/reporterDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/new_jf"
+            android:text="تاريخ المبلغ"
+            android:textColor="@color/BlueColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reporterDateTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reporterDateTV" />
+
+        <TextView
+            android:id="@+id/reporterNameTV"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:textColor="@color/BlueColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/reporterName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reporterDateTV" />
+
+        <TextView
+            android:id="@+id/reporterName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/new_jf"
+            android:text="اسم المبلغ"
+            android:textColor="@color/BlueColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reporterNameTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reporterNameTV" />
+
+        <EditText
+            android:id="@+id/reporterPhoneTV"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:selectAllOnFocus="true"
+            android:textColor="@color/BlueColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/reporterPhone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reporterNameTV" />
+
+        <TextView
+            android:id="@+id/reporterPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/new_jf"
+            android:text="رقم المبلغ"
+            android:textColor="@color/BlueColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reporterPhoneTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reporterPhoneTV" />
+
+        <TextView
+            android:id="@+id/reporterAddressTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:minHeight="32dp"
+            android:paddingVertical="5dp"
+            android:selectAllOnFocus="true"
+            android:textColor="@color/BlueColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reporterAddress" />
+
+        <TextView
+            android:id="@+id/reporterAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/new_jf"
+            android:text="عنوان البلاغ بالتفصيل"
+            android:textColor="@color/BlueColor"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reporterPhoneTV" />
+
+        <TextView
+            android:id="@+id/reporterGender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:text="النوع"
+            android:textColor="@color/BlueColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reporterSeen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/reporterSeen"
+            app:layout_constraintTop_toTopOf="@+id/reporterSeen" />
+
+        <TextView
+            android:id="@+id/reporterSeen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:text="عدد مرات المشاهدة"
+            android:textColor="@color/BlueColor"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/reporterGender"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reporterAddressTV" />
+
+        <TextView
+            android:id="@+id/reporterGenderTV"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:textColor="@color/BlueColor"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reporterSeenTV"
+            app:layout_constraintEnd_toEndOf="@+id/reporterGender"
+            app:layout_constraintStart_toStartOf="@+id/reporterGender"
+            app:layout_constraintTop_toTopOf="@+id/reporterSeenTV" />
+
+        <TextView
+            android:id="@+id/reporterSeenTV"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:textColor="@color/BlueColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/reporterSeen"
+            app:layout_constraintStart_toStartOf="@+id/reporterSeen"
+            app:layout_constraintTop_toBottomOf="@+id/reporterSeen" />
+
+        <TextView
+            android:id="@+id/reporterPlaceTV"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:textColor="@color/BlueColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/reporterPlace"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reporterSeenTV" />
+
+        <TextView
+            android:id="@+id/reporterPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/new_jf"
+            android:text="سكن الحالة"
+            android:textColor="@color/BlueColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reporterPlaceTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reporterPlaceTV" />
+
+        <TextView
+            android:id="@+id/reporterId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:padding="5dp"
+            android:text="@string/dummy_number"
+            android:textColor="@color/redColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/refresh_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/refresh_btn" />
+
+        <EditText
+            android:id="@+id/reporterCasesNum_et"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="@color/BlueColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/reporterCasesNum"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reporterFeedbackDetails_et" />
+
+        <TextView
+            android:id="@+id/reporterCasesNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/new_jf"
+            android:text="عدد الحالات"
+            android:textColor="@color/redColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reporterCasesNum_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reporterCasesNum_et" />
+
+        <EditText
+            android:id="@+id/reporterFeedbackDate_et"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/white_shape"
+            android:drawableEnd="@drawable/calendar_white"
+            android:drawableTint="@color/redColor"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/BlueColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/reporterFeedbackDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reporterCasesNum_et" />
+
+        <TextView
+            android:id="@+id/reporterFeedbackDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/new_jf"
+            android:text="تاريخ التعامل"
+            android:textColor="@color/redColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reporterFeedbackDate_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reporterFeedbackDate_et" />
+
+        <EditText
+            android:id="@+id/reporterBlanketsNum_et"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="@color/BlueColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/reporterBlanketsNum"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reporterFeedbackDate_et" />
+
+        <TextView
+            android:id="@+id/reporterBlanketsNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/new_jf"
+            android:text="عدد البطاطين"
+            android:textColor="@color/redColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reporterBlanketsNum_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reporterBlanketsNum_et" />
+
+        <EditText
+            android:id="@+id/reporterClothesNum_et"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="@color/BlueColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/reporterClothesNum"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reporterBlanketsNum_et" />
+
+        <TextView
+            android:id="@+id/reporterClothesNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/new_jf"
+            android:text="عدد القطع"
+            android:textColor="@color/redColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reporterClothesNum_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reporterClothesNum_et" />
+
+        <EditText
+            android:id="@+id/reporterFoodNum_et"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/white_shape"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="@color/BlueColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/reporterFoodNum"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reporterClothesNum_et" />
+
+        <TextView
+            android:id="@+id/reporterFoodNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/new_jf"
+            android:text="عدد الوجبات"
+            android:textColor="@color/redColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reporterFoodNum_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reporterFoodNum_et" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

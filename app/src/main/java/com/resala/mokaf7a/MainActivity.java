@@ -66,10 +66,11 @@ public class MainActivity extends AppCompatActivity {
             mAuth.signOut();
             userBranch = branches[9];
             userId = "-1";
+
         } else {
             isAdmin = false;
-            isMrkzy = false;
         }
+        isMrkzy = false;
         finish();
     }
 }
