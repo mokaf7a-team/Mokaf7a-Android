@@ -21,4 +21,9 @@
     <string name="dummy_date">20–11–2020</string>
     <string name="dummy_area">طريق مصر اسكندرية الصحراوي</string>
     <string name="dummy_feedback">تم التعامل</string>
+
+    <string name="youAreNotUpdatedTitle">Update Available</string>
+    <string name="youAreNotUpdatedMessage">A new version of Mokaf7a is available. Please update to version </string>
+    <string name="youAreNotUpdatedMessage1">  now</string>
+    <string name="update">Update</string>
 </resources>
