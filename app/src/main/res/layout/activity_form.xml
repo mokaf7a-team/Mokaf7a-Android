@@ -1,173 +1,411 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/form_background"
+    android:background="@drawable/login"
     tools:context=".FormActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/background" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="289dp"
-        android:layout_height="89dp"
-        android:layout_marginTop="52dp"
-        android:text="قوات مكافحة البرد"
-        android:textColor="#9F8537"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/background" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="323dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="56dp"
-        android:text="الحملة تهدف الى مساعدة المشردين الذى يفترشون الطرقات فى ليالى الشتاء والفئات المهمشة واطفال الشوارع "
-        android:textColor="#ffff"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/khayal"
+            android:gravity="center"
+            android:text="قوات مكافحة البرد"
+            android:textColor="@color/gold"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="380dp"
-        android:layout_height="373dp"
-        android:layout_marginBottom="100dp"
-        android:src="@drawable/form_box"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:lineSpacingExtra="8dp"
+            android:text="الحملة تهدف الى مساعدة المشردين الذى يفترشون الطرقات فى ليالى الشتاء والفئات المهمشة واطفال الشوارع "
+            android:textAlignment="center"
+            android:textColor="@color/whiteColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.545"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="266dp"
-        android:layout_height="58dp"
-        android:layout_marginBottom="454dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/green_box" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/gray_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginVertical="54dp"
+            android:background="@drawable/form_box"
+            android:paddingVertical="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="241dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="228dp"
-        android:text="تسجيل بلاغ جديد"
-        android:textColor="@color/BlueColor"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/reporterNameTV"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/white_shape"
+                android:fontFamily="@font/new_jf"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="5dp"
+                android:textColor="@color/BlueColor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/reporterName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="104dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginEnd="60dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/reporterName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/new_jf"
+                android:text="اسم المبلغ"
+                android:textColor="@color/BlueColor"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/reporterNameTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/reporterNameTV" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="104dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="300dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/reporterPhoneTV"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/white_shape"
+                android:fontFamily="@font/new_jf"
+                android:gravity="center"
+                android:inputType="phone"
+                android:paddingHorizontal="5dp"
+                android:selectAllOnFocus="true"
+                android:textColor="@color/BlueColor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/reporterPhone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reporterNameTV" />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="325dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextPhone"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/reporterPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/new_jf"
+                android:text="رقم المبلغ"
+                android:textColor="@color/BlueColor"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/reporterPhoneTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/reporterPhoneTV" />
 
-    <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="320dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="33dp"
-        android:ems="10"
-        android:inputType="phone"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintEnd_toStartOf="@+id/editText2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/reporterAddressTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/white_shape"
+                android:fontFamily="@font/new_jf"
+                android:gravity="center"
+                android:minHeight="32dp"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="5dp"
+                android:selectAllOnFocus="true"
+                android:textColor="@color/BlueColor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reporterAddress" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="7dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            <TextView
+                android:id="@+id/reporterAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/new_jf"
+                android:text="عنوان البلاغ بالتفصيل"
+                android:textColor="@color/BlueColor"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reporterPhoneTV" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="299dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            <TextView
+                android:id="@+id/reporterGender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:fontFamily="@font/new_jf"
+                android:gravity="center"
+                android:text="النوع"
+                android:textColor="@color/BlueColor"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/reporterSeen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/reporterSeen"
+                app:layout_constraintTop_toTopOf="@+id/reporterSeen" />
 
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="149dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="224dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <TextView
+                android:id="@+id/reporterSeen"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/new_jf"
+                android:gravity="center"
+                android:text="عدد مرات المشاهدة"
+                android:textColor="@color/BlueColor"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/reporterGender"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reporterAddressTV" />
 
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="102dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="262dp"
-        android:layout_marginBottom="252dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+            <Spinner
+                android:id="@+id/reporterGenderTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="3dp"
+                android:background="@drawable/rounded_edittext"
+                android:fontFamily="@font/new_jf"
+                android:gravity="center"
+                android:minHeight="32dp"
+                android:paddingHorizontal="3dp"
+                android:textColor="@color/BlueColor"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/reporterSeenTV"
+                app:layout_constraintEnd_toEndOf="@+id/reporterGender"
+                app:layout_constraintStart_toStartOf="@+id/reporterGender"
+                app:layout_constraintTop_toTopOf="@+id/reporterSeenTV" />
+
+            <Spinner
+                android:id="@+id/reporterSeenTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="3dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_edittext"
+                android:fontFamily="@font/new_jf"
+                android:gravity="center"
+                android:minHeight="32dp"
+                android:paddingHorizontal="3dp"
+                android:textColor="@color/BlueColor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/reporterSeen"
+                app:layout_constraintStart_toStartOf="@+id/reporterSeen"
+                app:layout_constraintTop_toBottomOf="@+id/reporterSeen" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/reporterBranch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:fontFamily="@font/new_jf"
+                android:gravity="center"
+                android:text="الفرع"
+                android:textColor="@color/BlueColor"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/reporterArea"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/reporterArea"
+                app:layout_constraintTop_toTopOf="@+id/reporterArea" />
+
+            <TextView
+                android:id="@+id/reporterArea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/new_jf"
+                android:gravity="center"
+                android:text="المنطقة"
+                android:textColor="@color/BlueColor"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/reporterBranch"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reporterSeenTV" />
+
+            <Spinner
+                android:id="@+id/reporterBranchTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="3dp"
+                android:background="@drawable/rounded_edittext"
+                android:fontFamily="@font/new_jf"
+                android:gravity="center"
+                android:minHeight="32dp"
+                android:textColor="@color/BlueColor"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/reporterAreaTV"
+                app:layout_constraintEnd_toEndOf="@+id/reporterBranch"
+                app:layout_constraintStart_toStartOf="@+id/reporterBranch"
+                app:layout_constraintTop_toTopOf="@+id/reporterAreaTV" />
+
+            <Spinner
+                android:id="@+id/reporterAreaTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="3dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/white_shape"
+                android:fontFamily="@font/new_jf"
+                android:gravity="center"
+                android:minHeight="32dp"
+                android:textColor="@color/BlueColor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/reporterArea"
+                app:layout_constraintStart_toStartOf="@+id/reporterArea"
+                app:layout_constraintTop_toBottomOf="@+id/reporterArea" />
+
+
+            <Spinner
+                android:id="@+id/reporterPlaceTV"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/white_shape"
+                android:fontFamily="@font/new_jf"
+                android:gravity="center"
+                android:textColor="@color/BlueColor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/reporterPlace"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reporterAreaTV" />
+
+            <TextView
+                android:id="@+id/reporterPlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/new_jf"
+                android:text="سكن الحالة"
+                android:textColor="@color/BlueColor"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/reporterPlaceTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/reporterPlaceTV" />
+
+            <TextView
+                android:id="@+id/reportDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/new_jf"
+                android:gravity="center"
+                android:text="ملاحظات"
+                android:textAlignment="center"
+                android:textColor="@color/BlueColor"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/reportDescription_et"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/reportDescription_et" />
+
+            <EditText
+                android:id="@+id/reportDescription_et"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/white_shape"
+                android:fontFamily="@font/new_jf"
+                android:gravity="center"
+                android:inputType="textMultiLine"
+                android:minHeight="32dp"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="5dp"
+                android:scrollbars="vertical"
+                android:selectAllOnFocus="true"
+                android:textAlignment="center"
+                android:textColor="@color/BlueColor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/reportDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reporterPlaceTV" />
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginVertical="16dp"
+                android:background="@drawable/red_shape"
+                android:fontFamily="@font/new_jf"
+                android:onClick="addReport"
+                android:text="تسجيل"
+                android:textColor="@color/whiteColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reportDescription_et" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/gray_layout"
+            app:layout_constraintEnd_toEndOf="@+id/gray_layout"
+            app:layout_constraintStart_toStartOf="@+id/gray_layout"
+            app:layout_constraintTop_toTopOf="@+id/gray_layout"
+            app:srcCompat="@drawable/green_box" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:text="تسجيل بلاغ جديد"
+            android:textAlignment="center"
+            android:textColor="@color/BlueColor"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

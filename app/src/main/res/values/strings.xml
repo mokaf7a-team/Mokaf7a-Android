@@ -20,4 +20,5 @@
     <string name="dummy_number">0</string>
     <string name="dummy_date">20–11–2020</string>
     <string name="dummy_area">طريق مصر اسكندرية الصحراوي</string>
+    <string name="dummy_feedback">تم التعامل</string>
 </resources>

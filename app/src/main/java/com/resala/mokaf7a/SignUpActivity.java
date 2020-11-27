@@ -47,9 +47,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void createAccount(String email, String password) {
-        if (!validateForm()) {
-            return;
-        }
+        if (!validateForm()) return;
         mAuth
                 .createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(

@@ -43,6 +43,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/reporterFoodNum_et" />
 
+        <TextView
+            android:id="@+id/reportDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/new_jf"
+            android:gravity="center"
+            android:text="تفاصيل\n البلاغ"
+            android:textAlignment="center"
+            android:textColor="@color/BlueColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/reportDescription_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reportDescription_et" />
+
         <EditText
             android:id="@+id/reportDescription_et"
             android:layout_width="0dp"
@@ -215,21 +230,6 @@
             app:layout_constraintTop_toTopOf="@+id/reporterFeedbackDetails_et" />
 
         <TextView
-            android:id="@+id/reportDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/new_jf"
-            android:gravity="center"
-            android:text="تفاصيل\n البلاغ"
-            android:textAlignment="center"
-            android:textColor="@color/BlueColor"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/reportDescription_et"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/reportDescription_et" />
-
-        <TextView
             android:id="@+id/reporterDateTV"
             android:layout_width="0dp"
             android:layout_height="32dp"
@@ -250,7 +250,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/new_jf"
-            android:text="تاريخ المبلغ"
+            android:text="تاريخ البلاغ"
             android:textColor="@color/BlueColor"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/reporterDateTV"
