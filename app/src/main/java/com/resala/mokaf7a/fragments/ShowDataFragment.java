@@ -45,8 +45,8 @@ public class ShowDataFragment extends Fragment {
             "تعامل اخر"
     };
     ImageButton refresh_btn;
-    boolean allReportsFilter;
-    CheckBox allReportscheckbox;
+    boolean unFinishedTwasolFilter;
+    CheckBox unFinishedTwasolcheckbox;
 
     ReportsAdapter adapter;
     ArrayList<Report> reportItems = new ArrayList<>();
@@ -68,8 +68,8 @@ public class ShowDataFragment extends Fragment {
         spin.setAdapter(aa);
         spin.setSelection(0);
 
-        allReportscheckbox = view.findViewById(R.id.allReportscheckbox);
-        allReportscheckbox.setOnClickListener(v -> allReportsFilter = allReportscheckbox.isChecked());
+        unFinishedTwasolcheckbox = view.findViewById(R.id.allReportscheckbox);
+        unFinishedTwasolcheckbox.setOnClickListener(v -> unFinishedTwasolFilter = unFinishedTwasolcheckbox.isChecked());
 
         RecyclerView recyclerView = view.findViewById(R.id.reportsRecyclerView);
         recyclerView.setHasFixedSize(true);
@@ -99,16 +99,20 @@ public class ShowDataFragment extends Fragment {
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                             Report report = snapshot.getValue(Report.class);
                             assert report != null;
-                            String twasol1 = snapshot.child("first-feedback").getValue(String.class);
-                            String twasol2 = snapshot.child("second-feedback").getValue(String.class);
+//                            String twasol1 = snapshot.child("first-feedback").getValue(String.class);
+//                            String twasol2 = snapshot.child("second-feedback").getValue(String.class);
 
                             current_id++;
                             report.setId(current_id);
-                            report.setFirst_feedback(twasol1);
-                            report.setSecond_feedback(twasol2);
+//                            report.setFirst_feedback(twasol1);
+//                            report.setSecond_feedback(twasol2);
 
                             if (!isMrkzy && !report.branch.trim().equals(userBranch)) continue;
-                            //if (!report.feed_back.trim().isEmpty() && !allReportsFilter) continue;
+                            if (unFinishedTwasolFilter) {
+                                if (!(report.first_feedback == null || report.first_feedback.trim().isEmpty()))
+                                    continue;
+                            }
+
                             if (spin.getSelectedItem().toString().equals(t3amolTypes[0])) //الكل
                                 reportItems.add(report);
                             else if (report.feed_back_type == null || report.feed_back_type.trim().isEmpty()) //جاري التعامل

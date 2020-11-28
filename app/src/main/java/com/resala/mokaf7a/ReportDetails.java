@@ -138,8 +138,8 @@ public class ReportDetails extends AppCompatActivity {
     }
 
     public void editReport(View view) {
-        reportsRef.child(key).child("first-feedback").setValue(reporterFirstFeedback_et.getText().toString().trim());
-        reportsRef.child(key).child("second-feedback").setValue(reporterSecondFeedbackTV.getText().toString().trim());
+        reportsRef.child(key).child("first_feedback").setValue(reporterFirstFeedback_et.getText().toString().trim());
+        reportsRef.child(key).child("second_feedback").setValue(reporterSecondFeedbackTV.getText().toString().trim());
         reportsRef.child(key).child("feed_back").setValue(reporterFeedbackDetails_et.getText().toString().trim());
         reportsRef.child(key).child("help_date").setValue(reporterFeedbackDate_et.getText().toString().trim());
         reportsRef.child(key).child("feed_back_type").setValue(reporterFeedbackType_et.getText().toString().trim());

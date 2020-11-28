@@ -178,19 +178,19 @@ public class StatisticsFragment extends Fragment {
 
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                             Report report = snapshot.getValue(Report.class);
-                            String twasol = snapshot.child("first-feedback").getValue(String.class);
+//                            String twasol = snapshot.child("first-feedback").getValue(String.class);
                             assert report != null;
-                            if (!(report.feed_back_type == null || report.feed_back_type.isEmpty())) {
+                            if (!(report.feed_back_type == null || report.feed_back_type.trim().isEmpty())) {
                                 totalFinished++;
                                 try {
-                                    if (!t3amolTypesCounter.containsKey(report.feed_back_type)) {//تعامل اخر
+                                    if (!t3amolTypesCounter.containsKey(report.feed_back_type.trim())) {//تعامل اخر
                                         t3amolTypesCounter.put(
                                                 t3amolTypes[6],
                                                 t3amolTypesCounter.get(t3amolTypes[6]) + 1);
                                     } else {
                                         t3amolTypesCounter.put(
                                                 report.feed_back_type,
-                                                t3amolTypesCounter.get(report.feed_back_type) + 1);
+                                                t3amolTypesCounter.get(report.feed_back_type.trim()) + 1);
                                     }
 
                                 } catch (Exception e) {
@@ -200,9 +200,9 @@ public class StatisticsFragment extends Fragment {
 
                             for (branchIterator = 0; branchIterator < BRANCHES_COUNT; branchIterator++) {
                                 if (report.branch.trim().equals(branches[branchIterator])) {
-                                    if (report.feed_back_type == null || report.feed_back_type.isEmpty())
+                                    if (report.feed_back_type == null || report.feed_back_type.trim().isEmpty())
                                         unfinishedT3amolCounter[branchIterator]++;
-                                    if (twasol == null || twasol.isEmpty())
+                                    if (report.first_feedback == null || report.first_feedback.trim().isEmpty())
                                         unfinishedTwasolCounter[branchIterator]++;
                                 }
                             }

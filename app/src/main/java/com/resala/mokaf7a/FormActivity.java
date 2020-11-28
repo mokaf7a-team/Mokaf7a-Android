@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -116,7 +117,7 @@ public class FormActivity extends AppCompatActivity implements AdapterView.OnIte
         day = cldr.get(Calendar.DAY_OF_MONTH);
         month = cldr.get(Calendar.MONTH);
         year = cldr.get(Calendar.YEAR);
-        String todayDate = day + "-" + (month + 1) + "-" + year;
+        String todayDate = year + "-" + (month + 1) + "-" + day;
         reportsRef.setValue(new Report(reporterAddressTV.getText().toString().trim()
                 , reporterAreaTV.getSelectedItem().toString()
                 , reporterBranchTV.getSelectedItem().toString()
@@ -128,6 +129,8 @@ public class FormActivity extends AppCompatActivity implements AdapterView.OnIte
                 , reportsRef.getKey()
                 , reporterSeenTV.getSelectedItem().toString()
                 , reporterPlaceTV.getSelectedItem().toString()));
+        Toast.makeText(this, "تم تسجيل البلاغ بنجاح", Toast.LENGTH_SHORT).show();
+        finish();
     }
 
     private boolean validateForm() {

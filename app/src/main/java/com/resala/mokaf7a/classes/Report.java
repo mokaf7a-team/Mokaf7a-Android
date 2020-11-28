@@ -11,7 +11,8 @@ public class Report {
     public String date;
     public String feed_back;
     public String feed_back_type;
-    public String first_feedback; //first-feedback is the correct
+    public String feed_back_details;
+    public String first_feedback;
     public String gender;
     public String help_date;
     public Object id;
@@ -20,7 +21,7 @@ public class Report {
     public String notes;
     public String phoneNo;
     public String pushid;
-    public String second_feedback; //second-feedback is the correct
+    public String second_feedback;
     public String seen;
     public String state;
 
@@ -56,21 +57,18 @@ public class Report {
         this.pushid = pushid;
         this.seen = seen;
         this.state = state;
+        this.first_feedback = "";
+        this.second_feedback = "";
+        this.feed_back_details = "";
+
     }
 
     public Report() {
-        this.feed_back_type = "";
+
     }
 
     public void setId(Object id) {
         this.id = id;
     }
 
-    public void setFirst_feedback(String first_feedback) {
-        this.first_feedback = first_feedback;
-    }
-
-    public void setSecond_feedback(String second_feedback) {
-        this.second_feedback = second_feedback;
-    }
 }

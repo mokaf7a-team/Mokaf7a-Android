@@ -26,23 +26,25 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:background="@drawable/white_shape"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/refresh_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/refresh_btn" />
 
     <TextView
         android:id="@+id/checkboxText"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="6dp"
+        android:layout_marginHorizontal="8dp"
+        android:lineSpacingExtra="8dp"
         android:fontFamily="@font/new_jf"
-        android:text="عرض كل البلاغات"
-        android:visibility="gone"
+        android:gravity="start"
+        android:paddingStart="32dp"
+        android:text="عرض البلاغات جارية التواصل فقط"
         android:textColor="@color/whiteColor"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/allReportscheckbox"
         app:layout_constraintEnd_toStartOf="@+id/allReportscheckbox"
+        app:layout_constraintStart_toEndOf="@+id/refresh_btn"
         app:layout_constraintTop_toTopOf="@+id/allReportscheckbox" />
 
     <TextView
