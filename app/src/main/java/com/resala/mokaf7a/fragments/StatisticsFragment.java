@@ -243,6 +243,7 @@ public class StatisticsFragment extends Fragment {
         }
         Collections.sort(top5ItemsArray);
         int top5Sum = 0;
+        top5Items.clear();
         for (int i = 0; i < t3amolTypesCounter.size(); i++) {
             top5Items.add(top5ItemsArray.get(i));
             top5Sum += top5ItemsArray.get(i).total;
