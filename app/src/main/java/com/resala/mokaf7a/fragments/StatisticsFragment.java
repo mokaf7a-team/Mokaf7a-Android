@@ -189,7 +189,7 @@ public class StatisticsFragment extends Fragment {
                                                 t3amolTypesCounter.get(t3amolTypes[6]) + 1);
                                     } else {
                                         t3amolTypesCounter.put(
-                                                report.feed_back_type,
+                                                report.feed_back_type.trim(),
                                                 t3amolTypesCounter.get(report.feed_back_type.trim()) + 1);
                                     }
 
