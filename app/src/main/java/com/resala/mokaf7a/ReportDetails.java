@@ -1,10 +1,13 @@
 package com.resala.mokaf7a;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +20,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Calendar;
 import java.util.Locale;
 
+import static com.resala.mokaf7a.LoginActivity.branches;
+import static com.resala.mokaf7a.LoginActivity.isMrkzy;
+import static com.resala.mokaf7a.fragments.ShowDataFragment.t3amolTypes;
+
 public class ReportDetails extends AppCompatActivity {
     FirebaseDatabase database;
     EditText reportDescription_et;
@@ -28,7 +35,7 @@ public class ReportDetails extends AppCompatActivity {
     EditText reporterFeedbackDate_et;
     EditText reporterCasesNum_et;
     EditText reporterFeedbackDetails_et;
-    EditText reporterFeedbackType_et;
+    AutoCompleteTextView reporterFeedbackType_et;
     EditText reporterPhoneTV;
 
     TextView reporterPlaceTV;
@@ -39,6 +46,12 @@ public class ReportDetails extends AppCompatActivity {
     TextView reporterDateTV;
     TextView reporterId;
 
+    /* **********added version 3**********************/
+    EditText reporterAreaTV;
+    EditText caseName_et;
+    AutoCompleteTextView reporterBranch_et;
+    /* ************************************************/
+
     String key;
     DatabaseReference reportsRef;
     int day;
@@ -46,6 +59,7 @@ public class ReportDetails extends AppCompatActivity {
     int year;
     DatePickerDialog picker;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +86,14 @@ public class ReportDetails extends AppCompatActivity {
         String feed_back_type = intent.getStringExtra("feed_back_type");
         String feed_back = intent.getStringExtra("feed_back");
 
+        /* **********added version 3**********************/
+        String branchText = intent.getStringExtra("branch");
+        String areaText = intent.getStringExtra("area");
+        String case_nameText = intent.getStringExtra("case_name");
+        reporterAreaTV = findViewById(R.id.reporterAreaTV);
+        reporterBranch_et = findViewById(R.id.reporterBranch_et);
+        caseName_et = findViewById(R.id.caseName_et);
+        /* ************************************************/
 
         reporterDateTV = findViewById(R.id.reporterDateTV);
         reporterNameTV = findViewById(R.id.reporterNameTV);
@@ -93,7 +115,6 @@ public class ReportDetails extends AppCompatActivity {
         reporterClothesNum_et = findViewById(R.id.reporterClothesNum_et);
         reporterFoodNum_et = findViewById(R.id.reporterFoodNum_et);
 
-
         reporterDateTV.setText(dateText);
         reporterNameTV.setText(nameText);
         reporterPhoneTV.setText(phoneText);
@@ -113,6 +134,18 @@ public class ReportDetails extends AppCompatActivity {
         reporterBlanketsNum_et.setText(blankets);
         reporterClothesNum_et.setText(clothes_num);
         reporterFoodNum_et.setText(meals);
+
+        /* **********added version 3**********************/
+        caseName_et.setText(case_nameText);
+        reporterBranch_et.setText(branchText);
+        reporterAreaTV.setText(areaText);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>
+                (this, android.R.layout.simple_list_item_1, branches);
+        reporterBranch_et.setAdapter(adapter);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>
+                (this, android.R.layout.simple_list_item_1, t3amolTypes);
+        reporterFeedbackType_et.setAdapter(adapter2);
+        /* ************************************************/
 
         key = intent.getStringExtra("key");
         reportsRef = database.getReference("reports");
@@ -148,6 +181,14 @@ public class ReportDetails extends AppCompatActivity {
         reportsRef.child(key).child("meals").setValue(reporterFoodNum_et.getText().toString().trim());
         reportsRef.child(key).child("clothes_num").setValue(reporterClothesNum_et.getText().toString().trim());
         reportsRef.child(key).child("notes").setValue(reportDescription_et.getText().toString().trim());
+
+        /* **********added version 3**********************/
+        reportsRef.child(key).child("case_name").setValue(caseName_et.getText().toString().trim());
+        if (isMrkzy) {
+            reportsRef.child(key).child("branch").setValue(reporterBranch_et.getText().toString().trim());
+            reportsRef.child(key).child("area").setValue(reporterAreaTV.getText().toString().trim());
+        }
+        /* ************************************************/
         Toast.makeText(this, "تم تعديل البلاغ", Toast.LENGTH_SHORT).show();
         finish();
     }

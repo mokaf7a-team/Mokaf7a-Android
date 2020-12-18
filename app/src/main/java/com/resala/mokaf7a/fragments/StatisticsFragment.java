@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -98,6 +99,10 @@ public class StatisticsFragment extends Fragment {
             progress.setMessage("لحظات معانا...");
             progress.setCancelable(false); // disable dismiss by tapping outside of the dialog
             progress.show();
+            if (userId == null) {
+                Toast.makeText(getContext(), "something went wrong", Toast.LENGTH_SHORT).show();
+                getActivity().finish();
+            }
             usersRef = database.getReference("users").child(userId);
             usersRef.addListenerForSingleValueEvent(
                     new ValueEventListener() {
@@ -174,19 +179,19 @@ public class StatisticsFragment extends Fragment {
                         t3amolTypesCounter.put(t3amolTypes[2], 0);
                         t3amolTypesCounter.put(t3amolTypes[3], 0);
                         t3amolTypesCounter.put(t3amolTypes[4], 0);
-                        t3amolTypesCounter.put(t3amolTypes[6], 0);
+                        t3amolTypesCounter.put(t3amolTypes[5], 0);
+                        t3amolTypesCounter.put(t3amolTypes[7], 0);
 
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                             Report report = snapshot.getValue(Report.class);
-//                            String twasol = snapshot.child("first-feedback").getValue(String.class);
                             assert report != null;
                             if (!(report.feed_back_type == null || report.feed_back_type.trim().isEmpty())) {
                                 totalFinished++;
                                 try {
                                     if (!t3amolTypesCounter.containsKey(report.feed_back_type.trim())) {//تعامل اخر
                                         t3amolTypesCounter.put(
-                                                t3amolTypes[6],
-                                                t3amolTypesCounter.get(t3amolTypes[6]) + 1);
+                                                t3amolTypes[7],
+                                                t3amolTypesCounter.get(t3amolTypes[7]) + 1);
                                     } else {
                                         t3amolTypesCounter.put(
                                                 report.feed_back_type.trim(),

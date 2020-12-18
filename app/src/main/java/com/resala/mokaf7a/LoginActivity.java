@@ -43,7 +43,8 @@ public class LoginActivity extends AppCompatActivity {
             "حلوان",
             "اسكندرية",
             "المقطم",
-            "مركزي"
+            "مركزي",
+            "محافظات"
     };
     FirebaseDatabase database;
     Admin admin;
@@ -95,12 +96,14 @@ public class LoginActivity extends AppCompatActivity {
         if (user != null) {
             // Signed in
             userId = user.getUid();
-            Toast.makeText(this, "اهلا ييك", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            finish();
-        } else {
-            Toast.makeText(this, "حاول مرة اخري", Toast.LENGTH_SHORT).show();
+            if (userId != null) {
+                Toast.makeText(this, "اهلا ييك", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+                return;
+            }
         }
+        Toast.makeText(this, "حاول مرة اخري", Toast.LENGTH_SHORT).show();
     }
 
     private void signIn(String email, String password) {

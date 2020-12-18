@@ -24,6 +24,7 @@ public class Report {
     public String second_feedback;
     public String seen;
     public String state;
+    public String case_name;
 
     //for new report
     public Report(String address,
@@ -44,6 +45,7 @@ public class Report {
         this.branch = branch;
         this.case_num = "";
         this.clothes_num = "";
+        this.case_name = "";
         this.date = date;
         this.feed_back = "";
         this.feed_back_type = "";

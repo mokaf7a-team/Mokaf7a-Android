@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.resala.mokaf7a.R;
+import com.resala.mokaf7a.fragments.HamalatFragment;
 import com.resala.mokaf7a.fragments.ShowDataFragment;
 import com.resala.mokaf7a.fragments.StatisticsFragment;
 
@@ -24,14 +25,16 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     private static final int[] TAB_TITLES =
             new int[]{
                     R.string.tab_text_1,
-                    R.string.tab_text_2
+                    R.string.tab_text_2,
+                    R.string.tab_text_3
             };
 
     @StringRes
     private static final int[] ADMIN_TAB_TITLES =
             new int[]{
                     R.string.tab_text_1,
-                    R.string.tab_text_2
+                    R.string.tab_text_2,
+                    R.string.tab_text_3
             };
 
     private final Context mContext;
@@ -56,6 +59,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 case 1:
                     fragment = new ShowDataFragment();
                     break;
+                case 2:
+                    fragment = new HamalatFragment();
+                    break;
             }
         } else {
             switch (position) {
@@ -64,6 +70,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                     break;
                 case 1:
                     fragment = new ShowDataFragment();
+                    break;
+                case 2:
+                    fragment = new HamalatFragment();
                     break;
             }
         }
@@ -80,8 +89,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        // Show 2 total pages.
-        return 2;
+        // Show 3 total pages.
+        return 3;
     }
 }
 

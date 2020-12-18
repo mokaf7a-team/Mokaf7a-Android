@@ -26,7 +26,6 @@ import java.util.Locale;
 import static com.resala.mokaf7a.LoginActivity.branches;
 
 public class FormActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    private static final String TAG = "test";
     public static String[] gender = {
             "مسن فوق ال60",
             "مسنة فوق ال60",
@@ -105,7 +104,6 @@ public class FormActivity extends AppCompatActivity implements AdapterView.OnIte
         ae.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Setting the ArrayAdapter data on the Spinner
         reporterAreaTV.setAdapter(ae);
-//        reporterAreaTV.setOnItemSelectedListener(this);
 
 
     }

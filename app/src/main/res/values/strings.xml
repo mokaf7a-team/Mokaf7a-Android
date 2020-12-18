@@ -26,4 +26,5 @@
     <string name="youAreNotUpdatedMessage">A new version of Mokaf7a is available. Please update to version </string>
     <string name="youAreNotUpdatedMessage1">  now</string>
     <string name="update">Update</string>
+    <string name="tab_text_3">حملات</string>
 </resources>

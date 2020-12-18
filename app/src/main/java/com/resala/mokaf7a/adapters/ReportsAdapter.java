@@ -143,6 +143,12 @@ public class ReportsAdapter extends RecyclerView.Adapter<ReportsAdapter.ViewHold
             intent.putExtra("feed_back_type", itemClicked.feed_back_type);
             intent.putExtra("feed_back", itemClicked.feed_back);
 
+            /* **********added version 3**********************/
+            intent.putExtra("branch", itemClicked.branch);
+            intent.putExtra("area", itemClicked.area);
+            intent.putExtra("case_name", itemClicked.case_name);
+            /* ************************************************/
+
             intent.putExtra("key", itemClicked.pushid);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 

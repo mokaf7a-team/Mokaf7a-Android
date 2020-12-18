@@ -41,6 +41,7 @@ public class ShowDataFragment extends Fragment {
             "غير مستحق",
             "مش موجود",
             "مكرر",
+            "محافظات",
             "جاري التعامل",
             "تعامل اخر"
     };
@@ -117,14 +118,14 @@ public class ShowDataFragment extends Fragment {
                                 reportItems.add(report);
                             else if (report.feed_back_type == null || report.feed_back_type.trim().isEmpty()) //جاري التعامل
                             {
-                                if (spin.getSelectedItem().toString().equals(t3amolTypes[5]))
+                                if (spin.getSelectedItem().toString().equals(t3amolTypes[6]))
                                     reportItems.add(report);
-                            } else if (!spin.getSelectedItem().toString().equals(t3amolTypes[6]) &&
+                            } else if (!spin.getSelectedItem().toString().equals(t3amolTypes[7]) &&
                                     Arrays.asList(t3amolTypes).contains(report.feed_back_type.trim())) {
                                 //مش اخري .. تعامل موجود في الانواع .. هل هو مطابق ؟
                                 if (report.feed_back_type.trim().equals(spin.getSelectedItem().toString()))
                                     reportItems.add(report);
-                            } else if (spin.getSelectedItem().toString().equals(t3amolTypes[6]) &&
+                            } else if (spin.getSelectedItem().toString().equals(t3amolTypes[7]) &&
                                     !Arrays.asList(t3amolTypes).contains(report.feed_back_type.trim())) {
                                 reportItems.add(report);
                             } else {

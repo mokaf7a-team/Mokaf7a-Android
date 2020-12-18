@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     Button logOut_btn;
     public TabLayout.Tab tab0;
     public TabLayout.Tab tab1;
+    public TabLayout.Tab tab2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,19 +41,28 @@ public class MainActivity extends AppCompatActivity {
         tabs.setupWithViewPager(viewPager);
         tab0 = tabs.getTabAt(0);
         tab1 = tabs.getTabAt(1);
+        tab2 = tabs.getTabAt(2);
+
         assert tab0 != null;
         tab0.setCustomView(R.layout.tab_item);
         TextView textTab0 = tab0.getCustomView().findViewById(R.id.text1);
         textTab0.setText(getString(R.string.tab_text_1));
         ImageView imageViewTab0 = tab0.getCustomView().findViewById(R.id.icon);
         imageViewTab0.setImageResource(R.drawable.trend);
-        //      tab0.setIcon(R.drawable.account);
+
         assert tab1 != null;
         tab1.setCustomView(R.layout.tab_item);
         TextView textTab1 = tab1.getCustomView().findViewById(R.id.text1);
         textTab1.setText(getString(R.string.tab_text_2));
         ImageView imageViewTab1 = tab1.getCustomView().findViewById(R.id.icon);
         imageViewTab1.setImageResource(R.drawable.list);
+
+        assert tab2 != null;
+        tab2.setCustomView(R.layout.tab_item);
+        TextView textTab2 = tab2.getCustomView().findViewById(R.id.text1);
+        textTab2.setText(getString(R.string.tab_text_3));
+        ImageView imageViewTab2 = tab2.getCustomView().findViewById(R.id.icon);
+        imageViewTab2.setImageResource(R.drawable.bus);
     }
 
     @Override
