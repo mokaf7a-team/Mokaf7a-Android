@@ -1,6 +1,7 @@
 package com.resala.mokaf7a;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -21,6 +22,7 @@ import static com.resala.mokaf7a.LoginActivity.userBranch;
 
 public class AddHamlaActivity extends AppCompatActivity {
 
+    private static final String TAG = "hamalat";
     EditText hamlaDate_et;
     EditText hamlaRoad_et;
     EditText girlsCount_et;
@@ -114,6 +116,9 @@ public class AddHamlaActivity extends AppCompatActivity {
                 , hamlaRoad_et.getText().toString().trim()
                 , hamlaDate_et.getText().toString().trim()));
         Toast.makeText(this, "تم تسجيل الحملة بنجاح", Toast.LENGTH_SHORT).show();
-        finish();//TODO :: go to other form to add cases
+        Intent intent = new Intent(getApplicationContext(), AddCasesActivity.class);
+        intent.putExtra("key", hamalatRef.getKey());
+        startActivity(intent);
+        finish();
     }
 }

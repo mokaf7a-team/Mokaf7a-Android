@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.resala.mokaf7a.AddHamlaActivity;
 import com.resala.mokaf7a.R;
+import com.resala.mokaf7a.ShowHamalatActivity;
 
 public class HamalatFragment extends Fragment {
     View view;
@@ -25,8 +26,7 @@ public class HamalatFragment extends Fragment {
         viewHamalatBtn = view.findViewById(R.id.viewHamalatBtn);
         addHamlaBtn = view.findViewById(R.id.addHamlaBtn);
         viewHamalatBtn.setOnClickListener(v -> {
-            startActivity(new Intent(getActivity(), AddHamlaActivity.class));
-            //TODO :: change destination activity to view all hamalat
+            startActivity(new Intent(getActivity(), ShowHamalatActivity.class));
         });
 
         addHamlaBtn.setOnClickListener(v -> {

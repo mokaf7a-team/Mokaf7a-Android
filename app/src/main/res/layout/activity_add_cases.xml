@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/login"
+    android:layout_height="match_parent"
+    tools:context=".AddCasesActivity">
+
+    <ImageButton
+        android:id="@+id/close_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/red_shape"
+        android:onClick="close"
+        android:padding="12dp"
+        android:src="@drawable/close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/new_jf"
+        android:text="مكان الحالة"
+        android:textColor="@color/whiteColor"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/close_btn" />
+
+    <EditText
+        android:id="@+id/place_et"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/white_shape"
+        android:fontFamily="@font/new_jf"
+        android:gravity="center"
+        android:minHeight="32dp"
+        android:paddingVertical="5dp"
+        android:selectAllOnFocus="true"
+        android:textColor="@color/BlueColor"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/place" />
+
+    <TextView
+        android:id="@+id/blanketsCount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:fontFamily="@font/new_jf"
+        android:gravity="center"
+        android:text="عدد البطاطين"
+        android:textColor="@color/whiteColor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/clothesCount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/clothesCount"
+        app:layout_constraintTop_toTopOf="@+id/clothesCount" />
+
+    <TextView
+        android:id="@+id/clothesCount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/new_jf"
+        android:gravity="center"
+        android:text="عدد القطع"
+        android:textColor="@color/whiteColor"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/blanketsCount"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/place_et" />
+
+    <EditText
+        android:id="@+id/blanketsCount_et"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginHorizontal="12dp"
+        android:background="@drawable/white_shape"
+        android:fontFamily="@font/new_jf"
+        android:gravity="center"
+        android:inputType="number"
+        android:textColor="@color/BlueColor"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/clothesCount_et"
+        app:layout_constraintEnd_toEndOf="@+id/blanketsCount"
+        app:layout_constraintStart_toStartOf="@+id/blanketsCount"
+        app:layout_constraintTop_toTopOf="@+id/clothesCount_et" />
+
+    <EditText
+        android:id="@+id/clothesCount_et"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/white_shape"
+        android:fontFamily="@font/new_jf"
+        android:gravity="center"
+        android:inputType="number"
+        android:textColor="@color/BlueColor"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/clothesCount"
+        app:layout_constraintStart_toStartOf="@+id/clothesCount"
+        app:layout_constraintTop_toBottomOf="@+id/clothesCount" />
+
+    <TextView
+        android:id="@+id/mealsCount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:fontFamily="@font/new_jf"
+        android:gravity="center"
+        android:text="عدد الوجبات"
+        android:textColor="@color/whiteColor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/caseName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/caseName"
+        app:layout_constraintTop_toTopOf="@+id/caseName" />
+
+    <TextView
+        android:id="@+id/caseName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/new_jf"
+        android:gravity="center"
+        android:text="اسم الحالة (إن وجد)"
+        android:textColor="@color/whiteColor"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/mealsCount"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clothesCount_et" />
+
+    <EditText
+        android:id="@+id/mealsCount_et"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginHorizontal="12dp"
+        android:background="@drawable/white_shape"
+        android:fontFamily="@font/new_jf"
+        android:gravity="center"
+        android:inputType="number"
+        android:textColor="@color/BlueColor"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/caseName_et"
+        app:layout_constraintEnd_toEndOf="@+id/mealsCount"
+        app:layout_constraintStart_toStartOf="@+id/mealsCount"
+        app:layout_constraintTop_toTopOf="@+id/caseName_et" />
+
+    <EditText
+        android:id="@+id/caseName_et"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/white_shape"
+        android:fontFamily="@font/new_jf"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:textColor="@color/BlueColor"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/caseName"
+        app:layout_constraintStart_toStartOf="@+id/caseName"
+        app:layout_constraintTop_toBottomOf="@+id/caseName" />
+
+    <Button
+        android:id="@+id/addCase_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/green_box"
+        android:fontFamily="@font/new_jf"
+        android:onClick="AddCase"
+        android:text="اضافة حالة"
+        android:textColor="@color/BlueColor"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/caseName_et" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/casesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addCase_btn" />
+</androidx.constraintlayout.widget.ConstraintLayout>

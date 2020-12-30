@@ -18,6 +18,8 @@
         android:supportsRtl="false"
         android:theme="@style/AppTheme.NoActionBar"
         tools:replace="android:supportsRtl">
+        <activity android:name=".AddCasesActivity"></activity>
+        <activity android:name=".ShowHamalatActivity" />
         <activity android:name=".AddHamlaActivity" />
         <activity android:name=".ReportDetails" />
         <activity android:name=".StarterActivity" />
