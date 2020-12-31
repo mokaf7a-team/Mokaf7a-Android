@@ -18,14 +18,14 @@
         android:text="@string/dummy_area"
         android:textAlignment="center"
         android:textColor="@color/whiteColor"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/delete_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/delete_btn"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/nameTV"
+        android:id="@+id/dateTV"
         style="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -33,10 +33,10 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/new_jf"
         android:gravity="center"
-        android:text="اسم"
+        android:text="@string/dummy_date"
         android:textAlignment="center"
-        android:textColor="@color/whiteColor"
-        android:textSize="14sp"
+        android:textColor="@color/mintGreen"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/delete_btn"
         app:layout_constraintTop_toBottomOf="@+id/locationTV" />
@@ -61,10 +61,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTV">
+        app:layout_constraintTop_toBottomOf="@+id/dateTV">
 
         <TextView
-            android:id="@+id/mealsTV"
+            android:id="@+id/girlsTV"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -78,15 +78,15 @@
             android:textColor="@color/whiteColor"
             android:textSize="16sp"
             app:drawableEndCompat="@drawable/restaurant"
-            app:layout_constraintBottom_toBottomOf="@+id/blanketsTV"
-            app:layout_constraintEnd_toStartOf="@+id/clothesTV"
+            app:layout_constraintBottom_toBottomOf="@+id/branchTV"
+            app:layout_constraintEnd_toStartOf="@+id/boysTV"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/blanketsTV" />
+            app:layout_constraintTop_toTopOf="@+id/branchTV" />
 
         <TextView
-            android:id="@+id/clothesTV"
+            android:id="@+id/boysTV"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -100,15 +100,15 @@
             android:textAlignment="center"
             android:textColor="@color/whiteColor"
             android:textSize="16sp"
-            app:drawableEndCompat="@drawable/hanger"
+            app:drawableEndCompat="@drawable/bus"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/blanketsTV"
+            app:layout_constraintEnd_toStartOf="@+id/branchTV"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/mealsTV"
-            app:layout_constraintTop_toTopOf="@+id/blanketsTV" />
+            app:layout_constraintStart_toEndOf="@+id/girlsTV"
+            app:layout_constraintTop_toTopOf="@+id/branchTV" />
 
         <TextView
-            android:id="@+id/blanketsTV"
+            android:id="@+id/branchTV"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -118,15 +118,16 @@
             android:fontFamily="@font/new_jf"
             android:gravity="center"
             android:padding="8dp"
-            android:text="@string/dummy_number"
+            android:text="@string/dummy_far3"
             android:textAlignment="center"
             android:textColor="@color/whiteColor"
-            android:textSize="16sp"
-            app:drawableEndCompat="@drawable/blankets"
+            android:textSize="12sp"
+            app:drawableEndCompat="@drawable/city"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/clothesTV"
+            app:layout_constraintStart_toEndOf="@+id/boysTV"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

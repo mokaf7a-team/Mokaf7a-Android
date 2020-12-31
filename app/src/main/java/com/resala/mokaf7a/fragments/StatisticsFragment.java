@@ -50,8 +50,16 @@ public class StatisticsFragment extends Fragment {
 
     DatabaseReference reportsRef;
     ValueEventListener reportsListener;
+
+    DatabaseReference hamalatRef;
+    ValueEventListener hamalatListener;
+
     private long totalReports;
+    private long totalHamalat;
+
     TextView totalReportsTV;
+    TextView totalHamalatTV;
+
     TextView totalFeedbacksTV;
 
     TextView[] unfinishedTwasolTV = new TextView[9];
@@ -83,6 +91,8 @@ public class StatisticsFragment extends Fragment {
         database = FirebaseDatabase.getInstance();
         branchTV = view.findViewById(R.id.branch);
         totalReportsTV = view.findViewById(R.id.totalReportsTV);
+        totalHamalatTV = view.findViewById(R.id.totalHamalatTV);
+
         totalFeedbacksTV = view.findViewById(R.id.totalFeedbacksTV);
 
         RecyclerView recyclerView = view.findViewById(R.id.feebacksRecyclerView);
@@ -113,6 +123,7 @@ public class StatisticsFragment extends Fragment {
                                 userBranch = user.branch;
                                 isMrkzy = userBranch.equals(branches[9]);
                                 branchTV.setText(userBranch);
+                                refreshHamalat();
                                 refreshReports();
                             }
                             progress.dismiss();
@@ -126,6 +137,7 @@ public class StatisticsFragment extends Fragment {
                     });
         } else {
             branchTV.setText(userBranch);
+            refreshHamalat();
             refreshReports();
         }
         return view;
@@ -160,6 +172,23 @@ public class StatisticsFragment extends Fragment {
         unfinishedT3amolTV[6] = view.findViewById(R.id.helwanT3amol);
         unfinishedT3amolTV[7] = view.findViewById(R.id.alexT3amol);
         unfinishedT3amolTV[8] = view.findViewById(R.id.mokattamT3amol);
+    }
+
+    private void refreshHamalat() {
+        hamalatRef = database.getReference("hamalat");
+
+        hamalatListener = hamalatRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                totalHamalat = dataSnapshot.getChildrenCount();
+                totalHamalatTV.setText(String.valueOf(totalHamalat));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void refreshReports() {
@@ -264,6 +293,9 @@ public class StatisticsFragment extends Fragment {
         super.onDestroy();
         if (reportsRef != null && reportsListener != null) {
             reportsRef.removeEventListener(reportsListener);
+        }
+        if (hamalatRef != null && hamalatListener != null) {
+            hamalatRef.removeEventListener(hamalatListener);
         }
     }
 }

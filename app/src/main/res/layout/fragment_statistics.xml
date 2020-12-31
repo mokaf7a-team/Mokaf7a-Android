@@ -56,23 +56,41 @@
                 android:id="@+id/totalReportsTV"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:paddingHorizontal="16dp"
+                android:text="100"
+                android:textAlignment="center"
+                android:textColor="@color/redColor"
+                android:textSize="64sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/totalHamalatTV"
+                app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+            <TextView
+                android:id="@+id/totalHamalatTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:gravity="center"
                 android:paddingHorizontal="16dp"
-                android:text="0"
+                android:text="5"
                 android:textAlignment="center"
-                android:textColor="@color/BlueColor"
+                android:textColor="@color/winterColor2"
                 android:textSize="64sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/totalReportsTV"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
             <TextView
+                android:id="@+id/textView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="16dp"
@@ -81,12 +99,29 @@
                 android:paddingHorizontal="16dp"
                 android:text="بلاغ"
                 android:textAlignment="center"
-                android:textColor="@color/BlueColor"
+                android:textColor="@color/redColor"
                 android:textSize="28sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/totalReportsTV"
                 app:layout_constraintTop_toBottomOf="@+id/totalReportsTV" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/new_jf"
+                android:gravity="center"
+                android:paddingHorizontal="16dp"
+                android:text="حملة"
+                android:textAlignment="center"
+                android:textColor="@color/winterColor2"
+                android:textSize="28sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/totalHamalatTV"
+                app:layout_constraintStart_toStartOf="@+id/totalHamalatTV"
+                app:layout_constraintTop_toBottomOf="@+id/totalHamalatTV" />
 
             <TextView
                 android:id="@+id/textView32"
@@ -98,7 +133,7 @@
                 android:fontFamily="@font/new_jf"
                 android:paddingHorizontal="16dp"
                 android:paddingVertical="8dp"
-                android:text="اجمالي البلاغات حتي الان"
+                android:text="اجمالي البلاغات و الحملات حتي الان"
                 android:textColor="@color/whiteColor"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -596,6 +631,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView34" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>

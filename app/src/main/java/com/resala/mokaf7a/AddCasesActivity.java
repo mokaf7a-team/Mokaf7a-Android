@@ -3,6 +3,7 @@ package com.resala.mokaf7a;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -43,6 +44,7 @@ public class AddCasesActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         Intent intent = getIntent();
         key = intent.getStringExtra("key");
+        Log.d("onCreate:", "hamla key =" + key);
         hamalatRef = database.getReference("hamalat").child(key).child("cases");
 
         place_et = findViewById(R.id.place_et);
