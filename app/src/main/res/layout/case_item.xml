@@ -77,7 +77,7 @@
             android:textAlignment="center"
             android:textColor="@color/whiteColor"
             android:textSize="16sp"
-            app:drawableEndCompat="@drawable/restaurant"
+            app:drawableEndCompat="@drawable/food"
             app:layout_constraintBottom_toBottomOf="@+id/blanketsTV"
             app:layout_constraintEnd_toStartOf="@+id/clothesTV"
             app:layout_constraintHorizontal_bias="0.5"

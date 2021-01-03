@@ -10,8 +10,8 @@ android {
         applicationId "com.resala.mokaf7a"
         minSdkVersion 18
         targetSdkVersion 29
-        versionCode 3
-        versionName "1.2"
+        versionCode 4
+        versionName "1.2.1"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

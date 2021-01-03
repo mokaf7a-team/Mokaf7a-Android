@@ -13,13 +13,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.resala.mokaf7a.adapters.HamalatAdapter;
+import com.resala.mokaf7a.classes.Case;
 import com.resala.mokaf7a.classes.Hamla;
 
 import java.util.ArrayList;
 
+import static com.resala.mokaf7a.LoginActivity.branches;
+import static com.resala.mokaf7a.LoginActivity.isMrkzy;
+import static com.resala.mokaf7a.LoginActivity.userBranch;
+
 public class ShowHamalatActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference hamalatRef;
+    DatabaseReference casesRef;
     ValueEventListener hamalatListener;
 
     HamalatAdapter adapter;
@@ -44,8 +50,40 @@ public class ShowHamalatActivity extends AppCompatActivity {
                 hamalatItems.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Hamla hamla = snapshot.getValue(Hamla.class);
-                    hamla.setKey(snapshot.getKey());
-                    hamalatItems.add(hamla);
+                    if (hamla != null) {
+                        if (hamla.branch.equals(branches[9]) || isMrkzy || userBranch.equals(hamla.branch)) {
+                            hamla.setKey(snapshot.getKey());
+                            casesRef = snapshot.getRef().child("cases");
+                            casesRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    int allMeals = 0;
+                                    int allClothes = 0;
+                                    int allBlankets = 0;
+                                    int allCases = 0;
+                                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                        Case aCase = snapshot.getValue(Case.class);
+                                        assert aCase != null;
+                                        allBlankets += aCase.blankets;
+                                        allClothes += aCase.clothes;
+                                        allMeals += aCase.meals;
+                                        allCases++;
+                                    }
+                                    hamla.setAllBlankets(allBlankets);
+                                    hamla.setAllCases(allCases);
+                                    hamla.setAllClothes(allClothes);
+                                    hamla.setAllMeals(allMeals);
+                                    hamalatItems.add(hamla);
+                                    adapter.notifyDataSetChanged();
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+                        }
+                    }
                 }
                 adapter.notifyDataSetChanged();
             }

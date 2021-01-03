@@ -75,6 +75,12 @@ public class HamalatAdapter extends RecyclerView.Adapter<HamalatAdapter.ViewHold
         holder.girlsTV.setText(String.valueOf(item.girls_count));
         holder.boysTV.setText(String.valueOf(item.boys_count));
         holder.branchTV.setText(item.branch);
+
+        holder.casesCountTV.setText(String.valueOf(item.allCases));
+        holder.blanketsTV.setText(String.valueOf(item.allBlankets));
+        holder.clothesTV.setText(String.valueOf(item.allClothes));
+        holder.mealsTV.setText(String.valueOf(item.allMeals));
+
     }
 
     /**
@@ -96,6 +102,12 @@ public class HamalatAdapter extends RecyclerView.Adapter<HamalatAdapter.ViewHold
         TextView branchTV;
         TextView boysTV;
         TextView girlsTV;
+
+        TextView casesCountTV;
+        TextView blanketsTV;
+        TextView clothesTV;
+        TextView mealsTV;
+
         ImageButton delete_btn;
         FirebaseDatabase database;
 
@@ -106,6 +118,10 @@ public class HamalatAdapter extends RecyclerView.Adapter<HamalatAdapter.ViewHold
             branchTV = itemView.findViewById(R.id.branchTV);
             boysTV = itemView.findViewById(R.id.boysTV);
             girlsTV = itemView.findViewById(R.id.girlsTV);
+            blanketsTV = itemView.findViewById(R.id.blanketsTV);
+            clothesTV = itemView.findViewById(R.id.clothesTV);
+            mealsTV = itemView.findViewById(R.id.mealsTV);
+            casesCountTV = itemView.findViewById(R.id.casesCountTV);
 
             delete_btn = itemView.findViewById(R.id.delete_btn);
             delete_btn.setOnClickListener(this);
