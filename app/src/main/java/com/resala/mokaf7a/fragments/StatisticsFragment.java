@@ -121,7 +121,7 @@ public class StatisticsFragment extends Fragment {
                             User user = dataSnapshot.getValue(User.class);
                             if (user != null) {
                                 userBranch = user.branch;
-                                isMrkzy = userBranch.equals(branches[9]);
+                                isMrkzy = userBranch.trim().equals("مركزي");
                                 branchTV.setText(userBranch);
                                 refreshHamalat();
                                 refreshReports();

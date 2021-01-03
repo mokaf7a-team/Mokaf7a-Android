@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -28,11 +29,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import static android.content.ContentValues.TAG;
+import static com.resala.mokaf7a.LoginActivity.branches;
 import static com.resala.mokaf7a.LoginActivity.isMrkzy;
 import static com.resala.mokaf7a.LoginActivity.userBranch;
 
 public class ShowDataFragment extends Fragment {
     Spinner spin;
+    Spinner branchSpin;
+    TextView textView;
+
     View view;
     FirebaseDatabase database;
     public static final String[] t3amolTypes = {
@@ -56,18 +61,39 @@ public class ShowDataFragment extends Fragment {
     ValueEventListener reportsListener;
 
     @Override
+    public void onResume() {
+        super.onResume();
+        if (!isMrkzy) {
+            textView.setVisibility(View.GONE);
+            branchSpin.setVisibility(View.GONE);
+        } else {
+            textView.setVisibility(View.VISIBLE);
+            branchSpin.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_show_data, container, false);
 
         spin = view.findViewById(R.id.t3amolTypeSpinner);
+        branchSpin = view.findViewById(R.id.branchSpinner);
+        textView = view.findViewById(R.id.textView24);
+
         database = FirebaseDatabase.getInstance();
         ArrayAdapter<String> aa = new ArrayAdapter<>(getActivity(), R.layout.spinner_item, t3amolTypes);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Setting the ArrayAdapter data on the Spinner
         spin.setAdapter(aa);
         spin.setSelection(0);
+
+        ArrayAdapter<String> ab = new ArrayAdapter<>(getActivity(), R.layout.spinner_item, branches);
+        ab.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Setting the ArrayAdapter data on the Spinner
+        branchSpin.setAdapter(ab);
+        branchSpin.setSelection(9);
 
         unFinishedTwasolcheckbox = view.findViewById(R.id.allReportscheckbox);
         unFinishedTwasolcheckbox.setOnClickListener(v -> unFinishedTwasolFilter = unFinishedTwasolcheckbox.isChecked());
@@ -100,15 +126,15 @@ public class ShowDataFragment extends Fragment {
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                             Report report = snapshot.getValue(Report.class);
                             assert report != null;
-//                            String twasol1 = snapshot.child("first-feedback").getValue(String.class);
-//                            String twasol2 = snapshot.child("second-feedback").getValue(String.class);
 
                             current_id++;
                             report.setId(current_id);
-//                            report.setFirst_feedback(twasol1);
-//                            report.setSecond_feedback(twasol2);
+                            if (isMrkzy && !branchSpin.getSelectedItem().toString().equals(branches[9]) && !report.branch.trim().equals(branchSpin.getSelectedItem().toString()))
+                                continue;
 
-                            if (!isMrkzy && !report.branch.trim().equals(userBranch)) continue;
+                            if (!isMrkzy && !report.branch.trim().equals(userBranch))
+                                continue;
+
                             if (unFinishedTwasolFilter) {
                                 if (!(report.first_feedback == null || report.first_feedback.trim().isEmpty()))
                                     continue;
